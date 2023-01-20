@@ -1,0 +1,39 @@
+.container-footer{
+    background-color: var(--primary-color);
+    padding: 10px;
+    box-shadow: 1px 1px 6px 3px rgb(86, 86, 86);
+}
+
+.list-footer{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.list-item-footer{
+    margin: 10px;
+    padding-right: 20px;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+.title-footer{
+    color: white;
+    margin: 10px;
+}
+
+.text-footer{
+    color: white;
+    margin: 10px;
+}
+
+.logo-social-footer{
+    width: 50px;
+    margin: 10px;
+}
+
+.logos-payment-footer{
+    width: 350px;
+    margin: 10px;
+}
