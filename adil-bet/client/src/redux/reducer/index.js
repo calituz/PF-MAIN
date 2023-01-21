@@ -11,12 +11,20 @@ import {
   GET_REVIEW_BY_ID,
   POST_REVIEW,
   DELETE_REVIEW,
-  GET_USER_INFO
+  GET_USER_INFO,
+  UPDATE_MULT_BET,
+  UPDATE_STATUS_BET,
+  UPDATE_AMOUNT_BET,
+  DELETE_WITHDRAW,
+  GET_ALL_WITHDRAWS,
+  UPDATE_WITHDRAW,
+  POST_WITHDRAW,
 } from "../actions/types";
 
 const cartItemsFromLocalStorage = localStorage.getItem("cartItem") || "[]";
 
 const initialState = {
+  withdraws: [],
   reviews: [],
   reviewById: [],
   matches: [],
@@ -38,6 +46,10 @@ const initialState = {
   cart: [],
   userActivities: [],
   userProfile: [],
+  users:[],
+  bets:[],
+  deposits:[],
+  reviews:[]
 };
 
 export const Reducer = (state = initialState, action) => {
@@ -245,6 +257,71 @@ export const Reducer = (state = initialState, action) => {
       return {
         ...state,
         reviewById:false
+      }
+    }
+    case 'GET_ALL_USERS':{
+      return {
+          ...state,
+          users: action.payload
+      }
+    }
+    case "UPDATE_ACTIVE_USER": {
+      return {
+        ...state,
+      };
+    }
+    case "UPDATE_ADMIN_USER": {
+      return {
+        ...state,
+      };
+    }
+    case 'GET_ALL_BETS':{
+      return {
+          ...state,
+          bets: action.payload
+      }
+    }
+    case 'GET_ALL_DEPOSITS':{
+      return {
+          ...state,
+          deposits: action.payload
+      }
+    }
+    case 'GET_ALL_REVIEWS':{
+      return {
+          ...state,
+          reviews: action.payload
+      }
+    }
+    case "UPDATE_REVIEW_STATUS": {
+      return {
+        ...state,
+      };
+    }
+    case UPDATE_MULT_BET: {
+      return {
+        ...state,
+      };
+    }
+    case UPDATE_AMOUNT_BET: {
+      return {
+        ...state,
+      };
+    }
+    case UPDATE_STATUS_BET: {
+      return {
+        ...state,
+      };
+    }
+    case 'UPDATE_DEPOSIT': {
+      return {
+        ...state,
+      };
+    }
+    case GET_ALL_WITHDRAWS:{
+      return {
+        ...state,
+        withdraw: action.payload
       }
     }
     default:
