@@ -1,0 +1,59 @@
+.container-Login {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #591411;
+  height: 100vh;
+}
+.container-form-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd;
+}
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 30px;
+  background-color: white;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-logo-adilbet {
+  background-color: #591411;
+  margin-top: 300px;
+}
+
+.title-login {
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+.text-form-register {
+  font-size: 20px;
+}
+
+/* Boton de google */
+.google-logo {
+  width: 30px;
+}
+
+.container-google {
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid rgb(199, 199, 199);
+  margin-top: 15px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+}
+
+.container-google:hover {
+  cursor: pointer;
+  filter: brightness(90%);
+}

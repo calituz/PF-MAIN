@@ -1,0 +1,10 @@
+.content{
+    display: flex;
+}
+
+.menu{
+    width: 300px;
+    padding: 10px;
+    padding-top: 40px;
+    background-color: #333;
+}
