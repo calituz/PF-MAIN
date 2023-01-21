@@ -78,7 +78,7 @@ export function userActive({userId, isActive}) {
   console.log(payload)
 return async function (dispatch) {
 try {
- const result = await axios.patch(`${api}/userupdate/${userId}`, payload);
+ const result = await axios.patch(`/userupdate/${userId}`, payload);
  return dispatch({
    type: 'UPDATE_ACTIVE_USER',
    payload: result.data,
@@ -96,7 +96,7 @@ export function userAdmin({userId, isAdmin}) {
   }
 return async function (dispatch) {
 try {
- const result = await axios.patch(`${api}/userupdate/${userId}`, payload);
+ const result = await axios.patch(`/userupdate/${userId}`, payload);
  console.log(result.data)
  return dispatch({
    type: 'UPDATE_ADMIN_USER',
@@ -115,7 +115,7 @@ export function reviewActive({id, status}) {
   }
 return async function (dispatch) {
 try {
- const result = await axios.patch(`${api}/reviews/${id}`, payload);
+ const result = await axios.patch(`/reviews/${id}`, payload);
  console.log(result.data)
  return dispatch({
    type: 'UPDATE_REVIEW_STATUS',
@@ -134,7 +134,7 @@ export function betMult({ id, multiplier }) {
   };
   return async function (dispatch) {
     try {
-      const result = await axios.patch(`${api}/bet/${id}`, payload);
+      const result = await axios.patch(`/bet/${id}`, payload);
       return dispatch({
         type: UPDATE_MULT_BET,
         payload: result.data,
@@ -152,7 +152,7 @@ export function betStatus({ id, status }) {
   };
   return async function (dispatch) {
     try {
-      const result = await axios.patch(`${api}/bet/${id}`, payload);
+      const result = await axios.patch(`/bet/${id}`, payload);
       return dispatch({
         type: UPDATE_STATUS_BET,
         payload: result.data,
@@ -170,7 +170,7 @@ export function betAmount({ id, amount }) {
   };
   return async function (dispatch) {
     try {
-      const result = await axios.patch(`${api}/bet/${id}`, payload);
+      const result = await axios.patch(`/bet/${id}`, payload);
       return dispatch({
         type: UPDATE_AMOUNT_BET,
         payload: result.data,
@@ -190,7 +190,7 @@ export function updateDeposit({id, amount, method }) {
   return async function (dispatch) {
     try {
       const result = await axios.patch(
-        `http://localhost:3001/deposit/${id}`,
+        `/deposit/${id}`,
         payload
       );
       console.log(result.data);
