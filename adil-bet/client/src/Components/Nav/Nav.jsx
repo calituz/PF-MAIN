@@ -23,11 +23,11 @@ export default function Nav() {
   const userDates = useSelector((state) => state.userDates);
 
   useEffect(() => {
-    // const dataUser = JSON.parse(window.localStorage.getItem('user'));
-    // !dataUser ?
-    dispatch(postLoginUserAuth0({ email: user?.email, name: user?.name }))
-    // :
-    // dispatch(postLoginUser({ email: dataUser[0].email, name: dataUser[0].name}))
+    const dataUser = JSON.parse(window.localStorage.getItem('user'));
+    !dataUser ?
+      dispatch(postLoginUserAuth0({ email: user?.email, name: user?.name }))
+      :
+      dispatch(postLoginUser({ email: dataUser[0].email, name: dataUser[0].name }))
   }, [user]);
 
 
@@ -51,28 +51,28 @@ export default function Nav() {
           <span>Tutorial</span>
         </Link>
 
-          <Link to="/about" className="nav-menu-link">
-            <span>Nosotros</span>
-          </Link>
-        </div>
-
-        <div className="sesion">
-          {Object.entries(userDates).length === 0 ? (
-            
-            <LoginButton/>
-            
-          ) : (
-            <div className="sesions-btn">
-              <Wallet/>
-              <MyAccountButton />
-              <Link to="/cart">
-                <button className="btn btn-primary btn-color"><img src={ cart } alt='cart' /></button>
-              </Link>
-              <LogoutButton />
-            </div>
-            
-          )}
-        </div>
+        <Link to="/about" className="nav-menu-link">
+          <span>Nosotros</span>
+        </Link>
       </div>
+
+      <div className="sesion">
+        {Object.entries(userDates).length === 0 ? (
+
+          <LoginButton />
+
+        ) : (
+          <div className="sesions-btn">
+            <Wallet />
+            <MyAccountButton />
+            <Link to="/cart">
+              <button className="btn btn-primary btn-color"><img src={cart} alt='cart' /></button>
+            </Link>
+            <LogoutButton />
+          </div>
+
+        )}
+      </div>
+    </div>
   );
 }
